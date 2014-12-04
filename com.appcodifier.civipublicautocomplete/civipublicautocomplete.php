@@ -6,7 +6,7 @@ require_once 'civipublicautocomplete.civix.php';
  * Implementation of hook_civicrm_config
  */
 function civipublicautocomplete_civicrm_config(&$config) {
-  _civipublicautocomplete_civix_civicrm_config($config);
+    _civipublicautocomplete_civix_civicrm_config($config);
 }
 
 function civipublicautocomplete_civicrm_buildForm($formName, &$form) {
@@ -17,7 +17,16 @@ function civipublicautocomplete_civicrm_buildForm($formName, &$form) {
     if (!CRM_Core_Permission::check('access CiviCRM') && !CRM_Core_Permission::check('access AJAX API')) {
         return;
     }
-
+    CRM_Core_Resources::singleton()->addStyle('
+        .autocomplete.ui-autocomplete {
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 1001;
+        }
+        * html .autocomplete.ui-autocomplete {
+            height: 300px;
+        }');
     CRM_Core_Resources::singleton()->addScriptFile('com.appcodifier.civipublicautocomplete', 'js/public.autocomplete.js');
 }
 

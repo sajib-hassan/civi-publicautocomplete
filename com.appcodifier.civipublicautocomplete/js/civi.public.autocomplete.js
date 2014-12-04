@@ -37,7 +37,7 @@ CRM.$(function ($) {
                 return true;
             },
             create: function (selector) {
-                $(selector).autocomplete('widget').css('z-index', 1001);
+                $(selector).autocomplete('widget').addClass('autocomplete');
             },
             renderItem: false,
             delay: 100,
