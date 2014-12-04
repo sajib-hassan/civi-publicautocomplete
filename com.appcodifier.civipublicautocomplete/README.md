@@ -1,5 +1,5 @@
-CiviCRM publicautocomplete
-===========================
+publicautocomplete
+==================
 
 This civicrm extension allows an anonymous user to have an autocomplete field instead of a free form one for the current employer, to avoid mispelled/duplicate organisation names
 

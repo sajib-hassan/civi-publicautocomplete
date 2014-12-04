@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<extension key="com.appcodifier.civipublicautocomplete" type="module">
+  <downloadUrl>https://github.com/sajib-hassan/civi-publicautocomplete/archive/master.zip</downloadUrl>
+  <file>civipublicautocomplete</file>
+  <name>Civi CRM public autocomplete field</name>
+  <description>This extension allows an anonymous user to have an autocomplete field instead of a free form one, to avoid mispelled/duplicate organisation names on the current employer</description>
+  <license>aGPL3</license>
+  <maintainer>
+    <author>Sajib Hassan</author>
+    <email>sajib@appcodifier.com</email>
+  </maintainer>
+  <releaseDate>2013-10-06</releaseDate>
+  <version>1.1</version>
+  <develStage>stable</develStage>
+  <compatibility>
+    <ver>4.4</ver>
+    <ver>4.5</ver>
+  </compatibility>
+  <comments>Read the README.md</comments>
+  <civix>
+    <namespace>CRM/Civipublicautocomplete</namespace>
+  </civix>
+</extension>
