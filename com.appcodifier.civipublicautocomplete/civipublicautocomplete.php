@@ -18,6 +18,13 @@ function civipublicautocomplete_civicrm_buildForm($formName, &$form) {
         return;
     }
     CRM_Core_Resources::singleton()->addStyle('
+        #crm-container.crm-public input.huge.ui-autocomplete-input {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAAAJdnBBZwAAABAAAAAQAFzGrcMAAADcSURBVCjPhdG9TgJhEIXh58M1EGEFjEohiUGk4f4vBaSy0UYRBFEIP8JaLEvWhOjbTc6bzMlMSPxNRICGpopgZejJJosTIRGCtjtLE1uxmrGeZSZEaGh5NzBH5Na9jp7ksMKNtQcL8O1R2bXYLBUKqBjv45QXJ86yoYBg96v4zr55JqzECjmhamedF4ZqWoe4runTJHcHzy60lb3aqmo6tVHJSoZEoKTjSoSdL5GShZ5ZdqhUPVcWrEzVdRXN9X3khTyXuooW+sm04BgjAyux+7TkMd4kWkaE/979AxXnQ1s0DN1UAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEwLTAyLTExVDExOjUwOjA4LTA2OjAw1hBl+wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAwNi0wNS0wNVQxMzoyMjo0MC0wNTowML/k/hoAAAAASUVORK5CYII=) no-repeat scroll right center white;
+            padding-right: 16px;
+        }
+        #crm-container.crm-public input.huge.ui-autocomplete-input.ui-autocomplete-loading{
+            background: url("/sites/all/modules/civicrm/i/loading.gif") no-repeat scroll right center white;
+        }
         .autocomplete.ui-autocomplete {
             max-height: 300px;
             overflow-y: auto;

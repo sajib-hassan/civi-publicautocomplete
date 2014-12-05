@@ -1,19 +1,20 @@
 var CRM = CRM || {};
 CRM.$(function ($) {
     $.fn.crmPublicAutocomplete = function (params, options) {
-        if (typeof params == 'undefined')
-            params = {};
-        if (typeof options == 'undefined')
-            options = {};
+        params = params || {};
+        options = options || {};
+
         params = $().extend({
             sequential: 1,
             entity: 'Contact',
             action: 'get'
         }, params);
+        
         var entity = params.entity;
         var action = params.action;
         delete params.entity;
         delete params.action;
+        
         options = $().extend({}, {
             field: 'name',
             skip: ['id', 'contact_id', 'contact_type', 'contact_is_deleted', "email_id", 'address_id', 'country_id'],
@@ -44,11 +45,14 @@ CRM.$(function ($) {
             width: 250,
             minChars: 1
         }, options);
+        
         return this.each(function () {
             var selector = this;
             var cache = {};
+            
+            $(selector).addClass('huge');
+            
             if (typeof $.fn.autocomplete !== 'function') {
-                console.log(typeof $.fn.autocomplete);
                 $.fn.autocomplete = cj.fn.autocomplete; //to work around the fubar cj
             }
             $(this).autocomplete({
@@ -59,7 +63,6 @@ CRM.$(function ($) {
                         return;
                     }
                     var _params = options.addFilters(params, request);
-                    console.log(_params);
                     CRM.api3(entity, action, _params).done(function (result) {
                         var ret = [];
                         if (result.values) {
@@ -98,7 +101,7 @@ CRM.$(function ($) {
         options: {sort: 'sort_name'}
     }, {
         field: 'organization_name',
-        minChars: 3,
+        minChars: 2,
         focus: function (event, ui) {
             $('#current_employer').val(ui.item.label);
             return false;
